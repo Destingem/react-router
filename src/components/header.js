@@ -1,10 +1,14 @@
-import { Link } from "react-router-dom"
-
+import { NavLink } from "react-router-dom"
+import styles from "./header.module.css"
 export default function Header(){
     return(
-        <header>
-            <Link to="/"><p>Homepage</p></Link>
-            <Link to="/secret"><p>Secret</p></Link>
+        <header className={styles.header}>
+            <nav>
+            <ul>
+                <li><NavLink exact activeClassName={styles.active} to="/">Homepage</NavLink></li>
+                <li><NavLink exact activeClassName={styles.active} to="secret">Secret</NavLink></li>
+            </ul>
+            </nav>
         </header>
     )
 }
